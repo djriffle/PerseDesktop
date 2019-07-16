@@ -3,33 +3,11 @@
   <head>
     <title>pv - JavaScript protein viewer</title>
     <meta charset="utf-8">
-
-    <style>
-      body {
-        padding:0px;
-        margin:0px;
-        height: 100%;
-      }
-      #viewer {
-        position:absolute;
-        top : 0px; 
-        left: 0px;
-        bottom : 0px;
-        right : 0px;
-        margin : 0px;
-        padding:0px;
-        overflow:hidden;
-      }
-      #traj-widget {
-        width: 200px;
-        height: 20px;
-        background: #aaa;
-        position: absolute;
-        top: 50px;
-        left: 50px;
-        display: none;
-      }
-    </style>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script>let $ = require('jquery');</script>
+    <script>require('popper.js');</script>
+    <script>require('bootstrap');</script>
     </head>
     <body>
 
@@ -42,6 +20,3 @@
 
 </body>
 </html>
-
-
-
