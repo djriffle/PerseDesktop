@@ -3,9 +3,10 @@
 // All of the Node.js APIs are available in this process.
 
 const PV= require('bio-pv/bio-pv.min.js')
-
+const Miner = require('pdbmine/pdbmine.js')
+var miner = Miner;
 var pv = PV
-
+searchText = document.getElementById("searchText");
 var viewer = pv.Viewer(document.getElementById('viewer'), 
                            { quality : 'medium', width: 'auto', height : 'auto',
                              antialias : true, outline : true});
@@ -42,10 +43,18 @@ var viewer = pv.Viewer(document.getElementById('viewer'),
       viewer.ballsAndSticks('ligand', ligand);
       viewer.cartoon('protein', structure);
     }
-    function load(pdb_id) {
-      
+
+  function search() {
+      let q = searchText.value;
+      miner.query(q, function(result){
+        console.log(result);
+        load(result[0]);
+      });
+  }
+  function load(pdbid){
+      if(pdbid!= ""){
       var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://files.rcsb.org/view/4UBB.pdb');
+      xhr.open('GET', 'https://files.rcsb.org/view/'+ pdbid +'.pdb');
       xhr.setRequestHeader('Content-type', 'application/x-pdb');
       xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
@@ -53,17 +62,17 @@ var viewer = pv.Viewer(document.getElementById('viewer'),
           preset();
           viewer.centerOn(structure);
         }
-        
-      }
-      xhr.send();
+      
     }
-    function transferase() {
-      load('1r6a');
-    }
+    xhr.send();
+  }
+  }
+  
+    
     
     window.onresize = function(event) {
       viewer.fitParent();
     }
-    document.addEventListener('DOMContentLoaded', transferase);
+    
 
 

@@ -16,17 +16,20 @@ function createWindow () {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true
     }
+    
   })
 
   // and load the index.html of the app.
   window.loadFile('index.html')
   window.webContents.openDevTools();
+  app.commandLine.appendSwitch("ignore-gpu-blacklist")
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
 
   // Emitted when the window is closed.
   window.on('closed', function () {
+    app.commandLine.appendSwitch("ignore-gpu-blacklist")
     // Dereference the window object, usually you would store windows
     // in an array if your app supports multi windows, this is the time
     // when you should delete the corresponding element.
@@ -38,6 +41,7 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
+app.commandLine.appendSwitch("ignore-gpu-blacklist")
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {

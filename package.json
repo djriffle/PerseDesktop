@@ -26,6 +26,7 @@
     "bootstrap": "^4.3.1",
     "electron-packager": "^14.0.1",
     "jquery": "^3.4.1",
+    "pdbmine": "^1.2.3",
     "popper.js": "^1.15.0",
     "requirejs": "^2.3.6"
   }
