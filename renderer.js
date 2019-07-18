@@ -37,6 +37,17 @@ var viewer = pv.Viewer(document.getElementById('viewer'),
       viewer.clear();
       viewer.trace('structure', structure);
     }
+
+    function ballsAndSticks() {
+      viewer.clear();
+      viewer.ballsAndSticks('structure', structure);
+    }
+
+    function spheres() {
+      viewer.clear();
+      viewer.spheres('structure', structure);
+    }
+
     function preset() {
       viewer.clear();
       var ligand = structure.select({rnames : ['RVP', 'SAH']});

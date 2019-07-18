@@ -1,22 +1,18 @@
 {
-  "name": "electron-quick-start",
+  "name": "Perse",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A protein visualizer",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-packager . --out dist ",
-    "distAll": "electron-packager . --out dist --platform all"
+    "dist": "electron-packager . --out dist --icon=perselogo.ico",
+    "distAll": "electron-packager . --out dist --platform all --icon=perselogo.icns"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
   ],
-  "author": "GitHub",
+  "author": "Dylan Riffle",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^5.0.6"

@@ -14,10 +14,12 @@ function createWindow () {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true
+      nodeIntegration: true,
+     // icon: path.join(__dirname, 'perselogo.icns')
     }
     
   })
+
 
   // and load the index.html of the app.
   window.loadFile('index.html')
