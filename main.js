@@ -23,7 +23,11 @@ function createWindow () {
 
   // and load the index.html of the app.
   window.loadFile('index.html')
-  window.webContents.openDevTools();
+
+
+  //window.webContents.openDevTools();
+
+
   app.commandLine.appendSwitch("ignore-gpu-blacklist")
 
   // Open the DevTools.
