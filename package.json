@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-packager . --out dist --icon=perselogo.ico",
+    "distW": "electron-packager . --out dist --icon=assets/icons/win/icon.ico --overwrite",
     "distAll": "electron-packager . --out dist --platform all --icon=perselogo.icns"
   },
   "repository": "https://github.com/electron/electron-quick-start",

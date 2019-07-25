@@ -7,6 +7,7 @@ const Miner = require('pdbmine/pdbmine.js')
 var miner = Miner;
 var pv = PV
 searchText = document.getElementById("searchText");
+loading = document.getElementById("loading");
 var viewer = pv.Viewer(document.getElementById('viewer'), 
                            { quality : 'medium', width: 'auto', height : 'auto',
                              antialias : true, outline : true});
@@ -57,12 +58,14 @@ var viewer = pv.Viewer(document.getElementById('viewer'),
 
   function search() {
       let q = searchText.value;
+      loading.style.visibility = "visible";
       miner.query(q, function(result){
         console.log(result);
         load(result[0]);
       });
   }
   function load(pdbid){
+      loading.style.visibility = "hidden";
       if(pdbid!= ""){
       var xhr = new XMLHttpRequest();
       xhr.open('GET', 'https://files.rcsb.org/view/'+ pdbid +'.pdb');

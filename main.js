@@ -15,20 +15,22 @@ function createWindow () {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
-     // icon: path.join(__dirname, 'perselogo.icns')
+      //icon: path.join(__dirname, 'perselogo.icns')
     }
     
   })
 
 
   // and load the index.html of the app.
+  window.setMenu(null);
   window.loadFile('index.html')
+  
 
 
   //window.webContents.openDevTools();
 
 
-  app.commandLine.appendSwitch("ignore-gpu-blacklist")
+  //app.commandLine.appendSwitch("ignore-gpu-blacklist")
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
